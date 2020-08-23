@@ -1,8 +1,8 @@
 <template>
     <div v-if="issues" :id="repo.name" class="inline-block">
-        <div class="flex m-4 justify-between">
+        <div class="flex m-4 justify-between text-white">
             <div class="flex">
-                <h3 class="mr-4"><a :href="repo.html_url" target="_blank" class="text-white">{{ repo.name }}</a></h3>
+                <h3 class="mr-4 w-64 truncate"><a :href="repo.html_url" target="_blank" class="text-white" :title="repo.name">{{ repo.name }}</a></h3>
             </div>
         </div>
         <div class="flex px-4 pb-8 items-start overflow-x-scroll">
@@ -14,9 +14,9 @@
                     <div class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter" v-for="issue in issues" v-bind:key="issue.id">
                         <h3 class="text-sm"><a :href="issue.html_url" class="text-black no-underline">#{{ issue.number }}</a></h3>
                         <a :href="issue.html_url" class="text-black no-underline break-words" target="_blank">{{ issue.title }}</a>
-                        <div class="text-grey-darker mt-2 ml-2 flex justify-between items-start">
-                            <a v-if="issue.assignee" :href="issue.assignee.html_url" :title="issue.assignee.login" target="_blank">
-                              <img :src="issue.assignee.avatar_url" width="32" class="rounded-full" />
+                        <div class="text-grey-darker mt-2 ml-2 flex  items-start">
+                            <a v-for="assignee in issue.assignees"  v-if="assignee" :href="assignee.html_url" :title="assignee.login" target="_blank">
+                              <img :src="assignee.avatar_url" width="32" class="rounded-full" />
                             </a>
                         </div>
 

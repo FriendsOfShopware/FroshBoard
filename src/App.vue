@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-full font-sans">
+  <div id="app" class="w-full font-sans gap-x-1">
     <Board v-for="repo in repos" :repo="repo" v-bind:key="repo.id"></Board>
   </div>
 </template>
