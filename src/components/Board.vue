@@ -14,14 +14,14 @@
                     <div class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter" v-for="issue in issues" v-bind:key="issue.id">
                         <h3 class="text-sm"><a :href="issue.html_url" class="text-black no-underline">#{{ issue.number }}</a></h3>
                         <a :href="issue.html_url" class="text-black no-underline break-words" target="_blank">{{ issue.title }}</a>
-                        <div class="text-grey-darker mt-2 ml-2 flex  items-start">
-                            <a v-for="assignee in issue.assignees"  v-if="assignee" :href="assignee.html_url" :title="assignee.login" target="_blank">
+                        <div class="text-grey-darker mt-2 ml-2 flex items-start" v-if="issue.assignees">
+                            <a v-for="assignee in issue.assignees" v-bind:key="assignee.id" :href="assignee.html_url" :title="assignee.login" target="_blank">
                               <img :src="assignee.avatar_url" width="32" class="rounded-full" />
                             </a>
                         </div>
 
                         <div class="my-2" v-if="issue.labels">
-                            <div class="text-sm font-medium py-1 px-2 rounded text-white align-middle m-1" v-for="label in issue.labels" :style="{ 'background-color': '#' + label.color }">{{ label.name }}</div>
+                            <div class="text-sm font-medium py-1 px-2 rounded text-white align-middle m-1" v-for="label in issue.labels" v-bind:key="label.id" :style="{ 'background-color': '#' + label.color }">{{ label.name }}</div>
                         </div>
 
                     </div>
