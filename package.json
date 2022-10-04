@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "core-js": "^3.25.4",
+    "core-js": "^3.25.5",
     "tailwindcss": "^3.1.8",
     "vue": "^3.2.40"
   },
