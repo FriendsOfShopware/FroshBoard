@@ -6,7 +6,7 @@
                                                   :title="repo.name">{{ repo.name }}</a></h3>
             </div>
         </div>
-        <div class="flex px-4 pb-8 items-start overflow-x-scroll">
+        <div class="flex px-4 pb-8 items-start">
             <div class="rounded bg-gray-300 shrink-0 w-64 p-2 mr-3 flex flex-col gap-2">
                 <div v-if="issues.length > 0">
                     <div class="flex justify-between py-1">
