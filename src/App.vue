@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="w-full font-sans gap-x-1">
+  <div class="w-full font-sans gap-x-1 flex bg-sky-600 min-h-dvh flex-wrap">
     <Board v-for="repo in repos" :repo="repo" v-bind:key="repo.id"></Board>
   </div>
 </template>
 
 <script>
-import Board from './components/Board';
+import Board from './components/Board.vue';
 
 export default {
   name: 'App',
