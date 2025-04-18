@@ -1,5 +1,5 @@
 <template>
-    <div v-if="elements" :id="repo.name" class="inline-block">
+    <div v-if="elements.length" :id="repo.name" class="inline-block">
         <div class="flex m-4 justify-between text-white">
             <div class="flex">
                 <h3 class="mr-4 w-64 truncate text-lg underline font-bold"><a :href="repo.html_url" target="_blank" class="text-white"
